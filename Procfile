@@ -1,0 +1,1 @@
+web: gunicorn zip_project.wsgi --log-file -
