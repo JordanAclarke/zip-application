@@ -10,7 +10,7 @@ export default class Post extends Component {
     }
 
     componentDidMount() {
-        this.getPost()
+        this.getPost(this.props.match.params.id)
     }
 
     getPost = () => {
