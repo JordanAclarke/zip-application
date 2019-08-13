@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 import './App.css';
 import CategoryList from './components/CategoryList.js'
 import Category from './components/Category.js'
-import NewCategoryForm from './components/NewCategoryForm.js'
+import NewCategoryForm from './components/NewCategoryForm.js/index.js'
 import Post from './components/Post.js'
 import Comment from './components/Comment.js'
 import NewPostForm from './components/NewPostForm.js';
