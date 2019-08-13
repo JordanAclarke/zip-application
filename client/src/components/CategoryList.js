@@ -7,7 +7,7 @@ export default class CategoryList extends Component {
         categories: []
     }
     componentDidMount() {
-        this.fetchAllCategories
+        this.fetchAllCategories()
     }
     fetchAllCategories = () => {
         axios.get('/api/v1/categories/')
@@ -31,6 +31,7 @@ export default class CategoryList extends Component {
         })
         return (
             <div>
+                <Link to={'/categories/new/'}>Create New Category</Link>
                 {categoryList}
             </div>
         )

@@ -24,7 +24,7 @@ export default class Category extends Component {
     }
 
     handleDeleteCookbook = () => {
-        axios.delete(`/api/v1/categories/${this.props.match.params.id}/`, this.state.category)
+        axios.delete(`/api/v1/categories/${this.state.category.id}/`, this.state.category)
             .then((res) => {
                 this.setState({
                     redirectToHome: true
@@ -43,12 +43,13 @@ export default class Category extends Component {
     handleSubmit = (evt) => {
         evt.preventDefault()
 
-        axios.post(`/api/v1/categories/${this.state.category.id}`, this.state.category)
-            .then((res) => {
+        axios.put(`/api/v1/categories/${this.state.category.id}/`, this.state.category)
+            .then(() => {
                 this.setState({
                     redirectToHome: true
                 })
             })
+            this.getCategory()
     }
 
     toggleCategoryEditForm = () => {
@@ -102,6 +103,10 @@ export default class Category extends Component {
                             onChange={this.handleChange}
                             value={this.state.category.photo_url}
                             />
+                            <input
+                            type='submit'
+                            value='Update Category'
+                            />
                         </div>
                     </form>
                     :
@@ -113,7 +118,7 @@ export default class Category extends Component {
                         <h3>{this.state.category.cate_title} Posts:</h3>
                         {postList}
                         <Link 
-                        to={{pathname: '/recipes/new', state: {category: this.state.category.id}}}>
+                        to={{pathname: '/posts/new', state: {category: this.state.category.id}}}>
                             Add A New Post
                         </Link>
                         <button onClick = {this.toggleCategoryEditForm}>Edit Category</button>

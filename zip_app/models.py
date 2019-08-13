@@ -14,7 +14,7 @@ class Post(models.Model):
     user_photo = models.CharField(max_length=800)
     date = models.CharField(max_length=500)
     title = models.CharField(max_length=500)
-    text: models.CharField(max_length=900)
+    text = models.CharField(max_length=900, default='Text Post')
     location = models.CharField(max_length=250)
     mood = models.CharField(max_length=250)
     text_photo = models.CharField(max_length=800)

@@ -24,7 +24,7 @@ export default class NewCategoryForm extends Component {
     handleSubmit = (evt) => {
         evt.preventDefault()
 
-        axios.post(`/api/v1/categories/`, this.state.category)
+        axios.post('/api/v1/categories/', this.state.newCategory)
             .then(() => {
                 this.setState({
                     redirectToHome: true
@@ -68,6 +68,12 @@ export default class NewCategoryForm extends Component {
                             onChange={this.handleChange}
                             value={this.state.newCategory.photo_url}
                             />
+                            <div>
+                            <input 
+                            type='submit'
+                            value='create category'
+                            />
+                            </div>
                         </div>
                     </form>
             </div>
