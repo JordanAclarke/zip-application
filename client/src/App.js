@@ -7,6 +7,7 @@ import NewCategoryForm from './components/NewCategoryForm.js'
 import Post from './components/Post.js'
 import Comment from './components/Comment.js'
 import NewPostForm from './components/NewPostForm.js';
+import NewCommentForm from './components/NewCommentForm';
 
 function App() {
   return (
@@ -19,11 +20,13 @@ function App() {
 
         <Switch>
           <Route exact path="/" component={CategoryList} />
-          <Route path ="/categories/new" component={NewCategoryForm} />
-          <Route path ="/categories/:id" component={Category} />
-          <Route path = "/posts/new" component={NewPostForm} />
-          <Route path = "/posts/:id" component={Post} />
+          <Route exact path ="/categories/new" component={NewCategoryForm} />
+          <Route exact path ="/categories/:id" component={Category} />
+          <Route exact path = "/posts/new" component={NewPostForm} />
+          <Route exact path = "/posts/:id" component={Post} />
+          <Route exact path="/comments/new" component={NewCommentForm} />
           <Route path = "/comments/:id" component={Comment} /> 
+          
         </Switch>
       </Router>
       

@@ -13,9 +13,15 @@ export default class NewPostForm extends Component {
             location: '',
             mood: '',
             text_photo: '',
-            category: this.props.location.state
+            category: this.props.match.params.id
         },
         redirectToHome: false
+    }
+    componentDidMount = () => {
+        axios.get('/api/v1/categories/')
+            .then((res) => {
+                this.setState({categories: res.data})
+            })
     }
 
     handleChange = (evt) => {
@@ -47,6 +53,7 @@ export default class NewPostForm extends Component {
                 <h2>Add A New Post</h2>
                 <form onSubmit={this.handleSubmit}>
                     <div>
+                        <div>
                         <label htmlFor="post-username">UserName:</label>
                         <input
                         type='text'
@@ -55,7 +62,9 @@ export default class NewPostForm extends Component {
                         onChange={this.handleChange}
                         value={this.state.newPost.username}
                         />
+                        </div>
 
+                        <div>
                         <label htmlFor="post-user-photo">Profile Photo:</label>
                         <input
                         type='text'
@@ -64,7 +73,9 @@ export default class NewPostForm extends Component {
                         onChange={this.handleChange}
                         value={this.state.newPost.user_photo}
                         />
+                        </div>
 
+                        <div>
                         <label htmlFor="post-date">Date:</label>
                         <input
                         type='text'
@@ -73,7 +84,10 @@ export default class NewPostForm extends Component {
                         onChange={this.handleChange}
                         value={this.state.newPost.date}
                         />
+                        </div>
 
+
+                        <div>
                         <label htmlFor="post-title">Post Title:</label>
                         <input
                         type='text'
@@ -82,7 +96,10 @@ export default class NewPostForm extends Component {
                         onChange={this.handleChange}
                         value={this.state.newPost.title}
                         />
+                        </div>
 
+
+                        <div>
                         <label htmlFor="post-text">Post:</label>
                         <input
                         type='text'
@@ -90,10 +107,12 @@ export default class NewPostForm extends Component {
                         id='post-text'
                         onChange={this.handleChange}
                         value={this.state.newPost.text}
-                        width= '250'
-                        height = '250'
+                        cols="300" 
+                        rows="100"
                         />
+                        </div>
 
+                        <div>
                         <label htmlFor="post-location">Location:</label>
                         <input
                         type='text'
@@ -102,7 +121,9 @@ export default class NewPostForm extends Component {
                         onChange={this.handleChange}
                         value={this.state.newPost.location}
                         />
-
+                        </div>
+                        
+                        <div>
                         <label htmlFor="post-mood">Mood:</label>
                         <input
                         type='text'
@@ -111,6 +132,7 @@ export default class NewPostForm extends Component {
                         onChange={this.handleChange}
                         value={this.state.newPost.mood}
                         />
+                        </div>
 
                         <label htmlFor="post-text-photo">Post Photo:</label>
                         <input

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Axios from 'axios';
 import { Link } from 'react-router-dom'
-
+import NewCommentForm from '../components/NewCommentForm'
 
 export default class Post extends Component {
     state = {
@@ -44,7 +44,15 @@ export default class Post extends Component {
                 <img src={this.state.post.text_photo} />
 
                 <h2>Comments:</h2>
+                {/* <Link 
+                        to={{pathname: '/comments/new', state: {post: this.state.post.id}}}>
+                            Add A New Comment
+                        </Link> */}
+                {/* <Link to={`/posts/${this.props.match.params.id}/comments/new`}>Add a Comment</Link> */}
                 {commentList}
+                <NewCommentForm 
+                match={this.props.match}
+                />
             </div>
         )
     }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect, Link } from 'react-router-dom'
-
+import NewPostForm from '../components/NewPostForm'
 export default class Category extends Component {
     state = {
         category: {},
@@ -23,7 +23,7 @@ export default class Category extends Component {
             })
     }
 
-    handleDeleteCookbook = () => {
+    handleDeleteCategory = () => {
         axios.delete(`/api/v1/categories/${this.state.category.id}/`, this.state.category)
             .then((res) => {
                 this.setState({
@@ -70,6 +70,7 @@ export default class Category extends Component {
         })
         return (
             <div>
+                {/* <NewPostForm match={this.props.match}/>  */}
                 {
                     this.state.isEditCategoryFormDisplay
                     ?
@@ -117,12 +118,13 @@ export default class Category extends Component {
 
                         <h3>{this.state.category.cate_title} Posts:</h3>
                         {postList}
+                        <NewPostForm match={this.props.match} />
                         <Link 
                         to={{pathname: '/posts/new', state: {category: this.state.category.id}}}>
                             Add A New Post
                         </Link>
                         <button onClick = {this.toggleCategoryEditForm}>Edit Category</button>
-                        <button onClick={this.handleDeleteCookbook}>Delete Category</button>
+                        <button onClick={this.handleDeleteCategory}>Delete Category</button>
                     </div>
                 }
             </div>
