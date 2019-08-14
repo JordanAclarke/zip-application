@@ -81,9 +81,9 @@ WSGI_APPLICATION = 'zip_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'zip_database',
-        'USER': 'jordanc',
-        'PASSWORD': 'basketball',
+        'NAME': 'zipp_database',
+        'USER': 'jordanclarke',
+        'PASSWORD': 'password',
         'HOST': 'localhost'
     }
 }
