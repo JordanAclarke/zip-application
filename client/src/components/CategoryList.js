@@ -56,7 +56,7 @@ export default class CategoryList extends Component {
 
                 <h1>Topics</h1>
                 <Link to={'/categories/new/'}>Create New Category</Link>
-                
+            
                 {categoryList}
             </div>
         )

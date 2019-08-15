@@ -78,7 +78,7 @@ export default class Category extends Component {
                     <Card.Footer className="text-muted">Posted On:{post.date}</Card.Footer>
                     </Card> */}
                     <div className="position">
-                    <Card bg="primary" text="white" style={{ width: '18rem' }}>
+                    <Card border="warning" text="black" style={{ width: '18rem' }}>
                     <Card.Header>{post.username}</Card.Header>
                     <Card.Body>
                     <Card.Title>{post.title}</Card.Title>
@@ -151,9 +151,13 @@ export default class Category extends Component {
                         <h2>{this.state.category.cate_title}</h2>
                         <p>Description:{this.state.category.description}</p>
                         <img src={this.state.category.photo_url} alt="⚡"  height='500' width='500' />
-
+                        <div>
+                        <Button variant="warning" onClick = {this.toggleCategoryEditForm}>Edit Category</Button>
+                        <Button variant="danger" onClick={this.handleDeleteCategory}>Delete Category</Button>
+                        </div>
                         <h3>{this.state.category.cate_title} Posts:</h3>
                         <div className='position1'>{postList} </div>
+                        
                         {/* <NewPostForm match={this.props.match} /> */}
                         {/* <Link 
                         to={{pathname: '/posts/new', state: {category: this.state.category.id}}}>
@@ -163,8 +167,7 @@ export default class Category extends Component {
                         to={{pathname: `/categories/${this.props.match.params.id}/posts/new`, state: {category: this.state.category.id}}}>
                             Add A New Post
                         </Link>
-                        <button onClick = {this.toggleCategoryEditForm}>Edit Category</button>
-                        <button onClick={this.handleDeleteCategory}>Delete Category</button>
+                        
                     </div>
                 }
             </div>
