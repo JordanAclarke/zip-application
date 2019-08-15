@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import {Navbar, Nav, NavDropdown, Card, Button} from 'react-bootstrap';
+const navBar = {backgroundColor: 'azure'};
 export default class CategoryList extends Component {
     state = {
         categories: []
@@ -38,12 +39,12 @@ export default class CategoryList extends Component {
         })
         return (
             <div>
-                <Navbar bg="light" expand="lg">
+                <Navbar style = {navBar} expand="lg">
                 <NavDropdown title="≡" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/">Home</NavDropdown.Item>
                 <NavDropdown.Item href="/categories">Categories</NavDropdown.Item>
                 </NavDropdown>
-                <Navbar.Brand href="#home">ZIP <i class="fa fa-bolt"></i></Navbar.Brand>
+                <Navbar.Brand href="/categories">ZIP <i class="fa fa-bolt"></i></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
