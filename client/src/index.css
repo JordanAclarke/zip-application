@@ -57,6 +57,9 @@ code {
 .under {
   text-decoration: none;
 }
+.under:hover {
+  text-decoration: none;
+}
 
 .sub {
   color: #ffffff;

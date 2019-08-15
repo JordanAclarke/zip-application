@@ -4,7 +4,7 @@ export default class PreviewPage extends Component {
     render() {
         return (
             <div>
-         <Link to={`/categories`} className='under'>       
+        <Link to={`/categories`} className='under'>       
         <div className="banner">
         <video playsinline='true' autoplay='true' muted='true' loop='true'>
         <source src='unleash.mp4' type='video/mp4' />

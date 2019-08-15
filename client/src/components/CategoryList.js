@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import {Navbar, Nav, Container} from 'react-bootstrap';
+import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 export default class CategoryList extends Component {
     state = {
         categories: []
@@ -31,7 +31,17 @@ export default class CategoryList extends Component {
         })
         return (
             <div>
-                
+                <Navbar bg="light" expand="lg">
+                <NavDropdown title="≡" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/categories">Categories</NavDropdown.Item>
+                </NavDropdown>
+                <Navbar.Brand href="#home">ZIP</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="mr-auto">
+                    </Nav>
+                </Navbar.Collapse>
+                </Navbar>
                 <Link to={'/categories/new/'}>Create New Category</Link>
                 {categoryList}
             </div>
