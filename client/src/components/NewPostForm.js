@@ -75,7 +75,7 @@ export default class NewPostForm extends Component {
                         />
                         </div>
 
-                        <div>
+                        {/* <div>
                         <label htmlFor="post-date">Date:</label>
                         <input
                         type='text'
@@ -84,7 +84,7 @@ export default class NewPostForm extends Component {
                         onChange={this.handleChange}
                         value={this.state.newPost.date}
                         />
-                        </div>
+                        </div> */}
 
 
                         <div>
@@ -112,7 +112,7 @@ export default class NewPostForm extends Component {
                         />
                         </div>
 
-                        <div>
+                        {/* <div>
                         <label htmlFor="post-location">Location:</label>
                         <input
                         type='text'
@@ -121,7 +121,7 @@ export default class NewPostForm extends Component {
                         onChange={this.handleChange}
                         value={this.state.newPost.location}
                         />
-                        </div>
+                        </div> */}
                         
                         <div>
                         <label htmlFor="post-mood">Mood:</label>

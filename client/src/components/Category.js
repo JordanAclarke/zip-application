@@ -118,9 +118,13 @@ export default class Category extends Component {
 
                         <h3>{this.state.category.cate_title} Posts:</h3>
                         {postList}
-                        <NewPostForm match={this.props.match} />
-                        <Link 
+                        {/* <NewPostForm match={this.props.match} /> */}
+                        {/* <Link 
                         to={{pathname: '/posts/new', state: {category: this.state.category.id}}}>
+                            Add A New Post
+                        </Link> */}
+                        <Link 
+                        to={{pathname: `/categories/${this.props.match.params.id}/posts/new`, state: {category: this.state.category.id}}}>
                             Add A New Post
                         </Link>
                         <button onClick = {this.toggleCategoryEditForm}>Edit Category</button>

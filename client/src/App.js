@@ -22,7 +22,7 @@ function App() {
           <Route exact path="/" component={CategoryList} />
           <Route exact path ="/categories/new" component={NewCategoryForm} />
           <Route exact path ="/categories/:id" component={Category} />
-          <Route exact path = "/posts/new" component={NewPostForm} />
+          <Route exact path = "/categories/:id/posts/new" component={NewPostForm} />
           <Route exact path = "/posts/:id" component={Post} />
           <Route exact path="/comments/new" component={NewCommentForm} />
           <Route path = "/comments/:id" component={Comment} /> 

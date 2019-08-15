@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import Axios from 'axios';
-import { Link } from 'react-router-dom'
+import axios from 'axios';
+import { Link, Redirect } from 'react-router-dom'
 import NewCommentForm from '../components/NewCommentForm'
 
 export default class Post extends Component {
     state = {
         post: {},
-        comments: []
+        comments: [],
+        redirectToHome: false
     }
 
     componentDidMount() {
@@ -14,14 +15,26 @@ export default class Post extends Component {
     }
 
     getPost = () => {
-        Axios.get(`/api/v1/posts/${this.props.match.params.id}/`)
+        axios.get(`/api/v1/posts/${this.props.match.params.id}/`)
             .then((res) => {
                 this.setState({post: res.data,
                 comments: res.data.comments
             })
             })
     }
+    handleDeletePost = () => {
+        axios.delete(`/api/v1/posts/${this.state.post.id}/`, this.state.post)
+            .then(() => {
+                this.setState({
+                    redirectToHome: true
+                })
+            })
+    }
+
     render() {
+        if(this.state.redirectToHome) {
+            return <Redirect to="/" />
+        }
         let commentList = this.state.comments.map((comment) => {
             return (
                 <Link to={`/comments/${comment.id}/`}>
@@ -42,6 +55,7 @@ export default class Post extends Component {
                 <h3>{this.state.post.location}</h3>
                 <p>{this.state.post.mood}</p>
                 <img src={this.state.post.text_photo} />
+                <button onClick={this.handleDeletePost}>Delete Post</button>
 
                 <h2>Comments:</h2>
                 {/* <Link 
