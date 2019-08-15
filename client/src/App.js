@@ -9,15 +9,11 @@ import Comment from './components/Comment.js'
 import NewPostForm from './components/NewPostForm.js';
 import NewCommentForm from './components/NewCommentForm';
 import PreviewPage from './components/PreviewPage.js'
+
 function App() {
   return (
     <div className="App">
       <Router>
-        <nav>
-          <h1>Zip</h1>
-          <Link to="/categories">All Categories</Link>
-        </nav>
-
         <Switch>
           <Route exact path="/" component={PreviewPage} />
           <Route exact path="/categories" component={CategoryList} />

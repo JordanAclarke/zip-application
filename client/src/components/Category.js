@@ -70,6 +70,7 @@ export default class Category extends Component {
         })
         return (
             <div>
+
                 {/* <NewPostForm match={this.props.match}/>  */}
                 {
                     this.state.isEditCategoryFormDisplay

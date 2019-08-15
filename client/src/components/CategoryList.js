@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-
+import {Navbar, Nav, Container} from 'react-bootstrap';
 export default class CategoryList extends Component {
     state = {
         categories: []
@@ -31,6 +31,7 @@ export default class CategoryList extends Component {
         })
         return (
             <div>
+                
                 <Link to={'/categories/new/'}>Create New Category</Link>
                 {categoryList}
             </div>
