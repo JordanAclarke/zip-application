@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import { Link, Redirect } from 'react-router-dom'
 import NewCommentForm from '../components/NewCommentForm'
-
+import {Navbar, Nav, NavDropdown, Card, Button} from 'react-bootstrap';
 export default class Post extends Component {
     state = {
         post: {},
@@ -47,6 +47,18 @@ export default class Post extends Component {
         })
         return (
             <div>
+                <Navbar bg="light" expand="lg">
+                <NavDropdown title="≡" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/">Home</NavDropdown.Item>
+                <NavDropdown.Item href="/categories">Categories</NavDropdown.Item>
+                </NavDropdown>
+                <Navbar.Brand href="#home">ZIP <i class="fa fa-bolt"></i></Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="mr-auto">
+                    </Nav>
+                </Navbar.Collapse>
+                </Navbar>
                 <h2>{this.state.post.username}</h2>
                 <img src={this.state.post.user_photo} />
                 <p>{this.state.post.date}</p>

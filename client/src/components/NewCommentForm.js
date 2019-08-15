@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
+import {Navbar, Nav, NavDropdown, Card, Button} from 'react-bootstrap';
 export default class NewCommentForm extends Component {
     state = {
         newComment: {

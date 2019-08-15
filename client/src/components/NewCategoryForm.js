@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
-
+import {Navbar, Nav, NavDropdown, Card, Button} from 'react-bootstrap';
 export default class NewCategoryForm extends Component {
     state = {
         newCategory: {
@@ -37,6 +37,18 @@ export default class NewCategoryForm extends Component {
         }
         return (
             <div>
+                <Navbar bg="light" expand="lg">
+                <NavDropdown title="≡" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/">Home</NavDropdown.Item>
+                <NavDropdown.Item href="/categories">Categories</NavDropdown.Item>
+                </NavDropdown>
+                <Navbar.Brand href="#home">ZIP <i class="fa fa-bolt"></i></Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="mr-auto">
+                    </Nav>
+                </Navbar.Collapse>
+                </Navbar>
                 <h2>Add New Category</h2>
                 <form onSubmit={this.handleSubmit}>
                         <div>

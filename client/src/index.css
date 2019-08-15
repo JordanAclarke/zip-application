@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: lightgray;
 }
 
 code {
@@ -47,11 +48,11 @@ code {
 }
 .neon  {
   color: #ffffff;
-  text-shadow: 0 0 20px greenyellow;
+  text-shadow: 0 0 20px gold;
 }
 .neon:after {
   content: attr(data-text);
-  color: greenyellow;
+  color: gold;
   filter: blur(-10px);
 }
 .under {
@@ -63,5 +64,12 @@ code {
 
 .sub {
   color: #ffffff;
-  text-shadow: 0 0 20px greenyellow;
+  text-shadow: 0 0 20px gold;
+}
+.inline {
+  display: flex;
+  justify-content: center;
+}
+.fa-bolt {
+  color: gold;
 }

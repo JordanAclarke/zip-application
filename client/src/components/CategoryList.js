@@ -21,8 +21,8 @@ export default class CategoryList extends Component {
     render() {
         let categoryList = this.state.categories.map((category) => {
             return (
-                <div>
-                <Link to ={`/categories/${category.id}/`}>
+                
+                <Link to ={`/categories/${category.id}/`} className="inline">
                     <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" src={category.photo_url} />
                         <Card.Body>
@@ -34,10 +34,6 @@ export default class CategoryList extends Component {
                         </Card.Body>
                         </Card>
                     </Link>
-                        {/* <h2>{category.cate_title}</h2>
-                        <img src={category.photo_url} alt={category.description} /> */}
-                    
-                </div>
             )
         })
         return (

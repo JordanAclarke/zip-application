@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect, Link } from 'react-router-dom'
 import NewPostForm from '../components/NewPostForm'
+import {Navbar, Nav, NavDropdown, Card, Button} from 'react-bootstrap';
 export default class Category extends Component {
     state = {
         category: {},
@@ -70,6 +71,18 @@ export default class Category extends Component {
         })
         return (
             <div>
+                <Navbar bg="light" expand="lg">
+                <NavDropdown title="≡" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/">Home</NavDropdown.Item>
+                <NavDropdown.Item href="/categories">Categories</NavDropdown.Item>
+                </NavDropdown>
+                <Navbar.Brand href="#home">ZIP <i class="fa fa-bolt"></i></Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="mr-auto">
+                    </Nav>
+                </Navbar.Collapse>
+                </Navbar>
 
                 {/* <NewPostForm match={this.props.match}/>  */}
                 {
@@ -115,7 +128,7 @@ export default class Category extends Component {
                     <div>
                         <h2>{this.state.category.cate_title}</h2>
                         <p>Description:{this.state.category.description}</p>
-                        <img src={this.state.category.photo_url} />
+                        <img src={this.state.category.photo_url} height='500' width='500' />
 
                         <h3>{this.state.category.cate_title} Posts:</h3>
                         {postList}
