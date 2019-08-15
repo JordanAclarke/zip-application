@@ -59,16 +59,23 @@ export default class Post extends Component {
                     </Nav>
                 </Navbar.Collapse>
                 </Navbar>
-                <h2>{this.state.post.username}</h2>
-                <img src={this.state.post.user_photo} />
-                <p>{this.state.post.date}</p>
-                <p>{this.state.post.title}</p>
-                <p>{this.state.post.text}</p>
-                <h3>{this.state.post.location}</h3>
-                <p>{this.state.post.mood}</p>
-                <img src={this.state.post.text_photo} />
-                <button onClick={this.handleDeletePost}>Delete Post</button>
 
+                                <Card>
+                <Card.Header as="h5">{this.state.post.username}</Card.Header>
+                <Card.Img variant="top" src={this.state.post.user_photo} />
+                <Card.Body>
+                    <Card.Title>{this.state.post.title}</Card.Title>
+                    <Card.Text>
+                    {this.state.post.text}
+                    </Card.Text>
+                    <Card.Img variant="top" src={this.state.post.text_photo} />
+                    <div>
+                    <button onClick={this.handleDeletePost}>Delete Post</button>
+                    </div>
+                    <Card.Header as="h5">Posted On: {this.state.post.date}</Card.Header>
+                </Card.Body>
+                </Card>
+                
                 <h2>Comments:</h2>
                 {/* <Link 
                         to={{pathname: '/comments/new', state: {post: this.state.post.id}}}>

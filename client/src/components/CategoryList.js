@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import {Navbar, Nav, NavDropdown, Card, Button} from 'react-bootstrap';
+import Img from 'react-image'
 const navBar = {backgroundColor: 'azure'};
+const myComponent = <img src="https://res.cloudinary.com/teepublic/image/private/s--eiJpaZjz--/t_Resized%20Artwork/c_fit,g_north_west,h_954,w_954/co_191919,e_outline:35/co_191919,e_outline:inner_fill:35/co_ffffff,e_outline:35/co_ffffff,e_outline:inner_fill:35/co_bbbbbb,e_outline:3:1000/c_mpad,g_center,h_1260,w_1260/b_rgb:eeeeee/c_limit,f_jpg,h_630,q_90,w_630/v1493344513/production/designs/1533556_1.jpg" />
 export default class CategoryList extends Component {
     state = {
         categories: []
@@ -25,7 +27,7 @@ export default class CategoryList extends Component {
                 
                 <Link to ={`/categories/${category.id}/`} className="inline">
                     <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src={category.photo_url} />
+                        <Card.Img variant="top" src={category.photo_url} alt="⚡" />
                         <Card.Body>
                             <Card.Title>{category.cate_title}</Card.Title>
                             <Card.Text>
@@ -54,6 +56,7 @@ export default class CategoryList extends Component {
 
                 <h1>Topics</h1>
                 <Link to={'/categories/new/'}>Create New Category</Link>
+                
                 {categoryList}
             </div>
         )
