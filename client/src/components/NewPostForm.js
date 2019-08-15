@@ -111,8 +111,8 @@ export default class NewPostForm extends Component {
                         rows="100"
                         />
                         </div>
-
-                        {/* <div>
+{/* 
+                        <div>
                         <label htmlFor="post-location">Location:</label>
                         <input
                         type='text'
@@ -121,8 +121,8 @@ export default class NewPostForm extends Component {
                         onChange={this.handleChange}
                         value={this.state.newPost.location}
                         />
-                        </div> */}
-                        
+                        </div>
+                         */}
                         <div>
                         <label htmlFor="post-mood">Mood:</label>
                         <input
