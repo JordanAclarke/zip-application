@@ -66,7 +66,7 @@ export default class Category extends Component {
         let postList = this.state.posts.map((post) => {
             return (
                 <Link to={`/posts/${post.id}/`}>
-                    <Card className="text-center">
+                    {/* <Card className="text-center">
                     <Card.Header>{post.username}</Card.Header>
                     <Card.Body>
                         <Card.Title>{post.title}</Card.Title>
@@ -76,7 +76,18 @@ export default class Category extends Component {
                         <Button variant="primary">View Post</Button>
                     </Card.Body>
                     <Card.Footer className="text-muted">Posted On:{post.date}</Card.Footer>
-                    </Card>
+                    </Card> */}
+                    <div className="position">
+                    <Card bg="primary" text="white" style={{ width: '18rem' }}>
+                    <Card.Header>{post.username}</Card.Header>
+                    <Card.Body>
+                    <Card.Title>{post.title}</Card.Title>
+                    <Card.Text>
+                        {post.date}
+                    </Card.Text>
+                    </Card.Body>
+                </Card>
+                </div>
                 </Link>
             )
         })
@@ -142,7 +153,7 @@ export default class Category extends Component {
                         <img src={this.state.category.photo_url} alt="⚡"  height='500' width='500' />
 
                         <h3>{this.state.category.cate_title} Posts:</h3>
-                        {postList}
+                        <div className='position1'>{postList} </div>
                         {/* <NewPostForm match={this.props.match} /> */}
                         {/* <Link 
                         to={{pathname: '/posts/new', state: {category: this.state.category.id}}}>
