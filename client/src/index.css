@@ -47,7 +47,7 @@ code {
   /* color: #ffffff */
 }
 .neon  {
-  color: #ffffff;
+  color: gold;
   text-shadow: 0 0 20px gold;
 }
 .neon:after {
@@ -63,8 +63,8 @@ code {
 }
 
 .sub {
-  color: #ffffff;
-  text-shadow: 0 0 20px gold;
+  color: gold;
+  text-shadow: 0 0 30px gold;
 }
 .inline {
   display: flex;

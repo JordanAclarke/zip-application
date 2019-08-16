@@ -10,7 +10,7 @@ export default class PreviewPage extends Component {
         <source src='unleash.mp4' type='video/mp4' />
         </video>
         <div className="content">
-        <h1 className='neon' data-text="Zip"><i class="fa fa-file-archive-o"></i></h1>
+        <h1 className='neon' >Zip  <i class="fa fa-bolt"></i></h1>
         <h2 className='sub'>Unleash Your Thoughts</h2>
         </div>
         </div>

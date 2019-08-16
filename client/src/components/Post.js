@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import { Link, Redirect } from 'react-router-dom'
 import NewCommentForm from '../components/NewCommentForm'
-import {Navbar, Nav, NavDropdown, Card, Button} from 'react-bootstrap';
+import {Navbar, Nav, NavDropdown, Card, Button, ListGroup} from 'react-bootstrap';
 export default class Post extends Component {
     state = {
         post: {},
@@ -38,10 +38,20 @@ export default class Post extends Component {
         let commentList = this.state.comments.map((comment) => {
             return (
                 <Link to={`/comments/${comment.id}/`}>
-                    {comment.username}
-                    {comment.userphoto}
-                    {comment.date}
-                    {comment.response}
+                <Card>
+                        <Card.Header>{this.state.post.title}</Card.Header>
+                        <Card.Body>
+                            <blockquote className="blockquote mb-0">
+                            <p>
+                                {' '}
+                                {comment.response}{' '}
+                            </p>
+                            <footer className="blockquote-footer">
+                                Posted On: {comment.date} By <cite title="Source Title">{comment.username}</cite>
+                            </footer>
+                            </blockquote>
+                            </Card.Body>
+                            </Card>
                 </Link>
             )
         })
