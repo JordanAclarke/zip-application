@@ -26,6 +26,7 @@ export default class CategoryList extends Component {
             return (
                 
                 <Link to ={`/categories/${category.id}/`} className="inline">
+                    <div className="position">
                     <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" src={category.photo_url} alt="⚡" />
                         <Card.Body>
@@ -36,6 +37,7 @@ export default class CategoryList extends Component {
                             <Button variant="primary">View {category.cate_title} Posts</Button>
                         </Card.Body>
                         </Card>
+                        </div>
                     </Link>
             )
         })
@@ -56,8 +58,9 @@ export default class CategoryList extends Component {
 
                 <h1>Topics</h1>
                 <Link to={'/categories/new/'}>Create New Category</Link>
-            
+                <div className='position1'>
                 {categoryList}
+                </div>
             </div>
         )
     }

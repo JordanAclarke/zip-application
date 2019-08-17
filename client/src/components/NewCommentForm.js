@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
-import {Navbar, Nav, NavDropdown, Card, Button} from 'react-bootstrap';
+import {Navbar, Nav, NavDropdown, Card, Button, Form, Row, Col} from 'react-bootstrap';
 export default class NewCommentForm extends Component {
     state = {
         newComment: {
@@ -50,9 +50,10 @@ export default class NewCommentForm extends Component {
         }
         return (
             <div>
-                <h2>Add A New Comment</h2>
+                <h2 className="comment-header">Add A New Comment</h2>
+                <div className="comment-form">
                 <form onSubmit={this.handleSubmit}>
-                    <div>
+                    <div className="txtb">
                     <label htmlFor='comment-username'>Username:</label>
                     <input 
                     type='text'
@@ -63,7 +64,7 @@ export default class NewCommentForm extends Component {
                     />
                     </div>
 
-                    <div>
+                    <div className="txtb">
                     <label htmlFor='comment-user-photo'>User Photo:</label>
                     <input 
                     type='text'
@@ -74,7 +75,7 @@ export default class NewCommentForm extends Component {
                     />
                     </div>
 
-                    <div>
+                    <div className="txtb">
                     <label htmlFor='comment-date'>Date:</label>
                     <input 
                     type='text'
@@ -85,26 +86,19 @@ export default class NewCommentForm extends Component {
                     />
                     </div>
 
-                    <div>
+                    <div className="txtb">
                     <label htmlFor='comment-response'>Response:</label>
-                    <input 
+                    <textarea 
                     type='text'
                     name='response'
                     id='comment-response'
+                    cols="30" rows="5"
                     onChange={this.handleChange}
                     value={this.state.newComment.response}
                     />
                     </div>
 
-                    <div>
-                    <label htmlFor='comment-user-location'>Location:</label>
-                    <input 
-                    type='text'
-                    name='user_location'
-                    id='comment-user-location'
-                    onChange={this.handleChange}
-                    value={this.state.newComment.user_location}
-                    />
+                    <div className="txtb">
                     <input
                     type='submit'
                     value='Add Comment'
@@ -112,7 +106,7 @@ export default class NewCommentForm extends Component {
                     </div>
 
                 </form>
-                
+                </div>
             </div>
         )
     }
