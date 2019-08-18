@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect, Link } from 'react-router-dom'
 import NewPostForm from '../components/NewPostForm'
+import CategoryList from '../components/CategoryList'
 import {Navbar, Nav, NavDropdown, Card, Button} from 'react-bootstrap';
 import Image from 'react-graceful-image'
-const navBar = {backgroundColor: 'azure'};
+const navBar = {backgroundColor: 'white'};
 export default class Category extends Component {
     state = {
         category: {},
@@ -70,6 +71,7 @@ export default class Category extends Component {
                     <div className="position"></div>
                         <Card>
                         <Card.Header>
+                        Posted By: {post.username}
                         </Card.Header>
                         <Card.Body>
                             <Card.Title>{post.title}</Card.Title>
@@ -101,7 +103,7 @@ export default class Category extends Component {
                 </Navbar.Collapse>
                 </Navbar>
 
-                {/* <NewPostForm match={this.props.match}/>  */}
+                
                 {
                     this.state.isEditCategoryFormDisplay
                     ?
@@ -145,7 +147,7 @@ export default class Category extends Component {
                     <div>
                         <h2>{this.state.category.cate_title}</h2>
                         <p>Description:{this.state.category.description}</p>
-                        <Image src={this.state.category.photo_url} alt="⚡" placeholderColor="gold" height='300' width='400' />
+                        {/* <Image src={this.state.category.photo_url} alt="⚡" placeholderColor="gold" height='300' width='400' /> */}
                         <div>
                         <Button variant="success" onClick = {this.toggleCategoryEditForm}>Edit Category</Button>
                         <Button variant="danger" onClick={this.handleDeleteCategory}>Delete Category</Button>
@@ -158,8 +160,8 @@ export default class Category extends Component {
                         <div className='position1'>
                         {postList} 
                         </div>
-                        
-                        {/* <NewPostForm match={this.props.match} /> */}
+
+                        <NewPostForm match={this.props.match} />
                         {/* <Link 
                         to={{pathname: '/posts/new', state: {category: this.state.category.id}}}>
                             Add A New Post

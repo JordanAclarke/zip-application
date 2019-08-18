@@ -50,7 +50,7 @@ export default class NewPostForm extends Component {
         }
         return (
             <div>
-                <Navbar bg="light" expand="lg">
+                {/* <Navbar bg="light" expand="lg">
                 <NavDropdown title="≡" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/">Home</NavDropdown.Item>
                 <NavDropdown.Item href="/categories">Categories</NavDropdown.Item>
@@ -61,11 +61,12 @@ export default class NewPostForm extends Component {
                     <Nav className="mr-auto">
                     </Nav>
                 </Navbar.Collapse>
-                </Navbar>
-                <h2>Add A New Post</h2>
+                </Navbar> */}
+                <h2 className="comment-header">Add A New Post</h2>
+                <div className="comment-form">
                 <form onSubmit={this.handleSubmit}>
                     <div>
-                        <div>
+                        <div className="txtb">
                         <label htmlFor="post-username">UserName:</label>
                         <input
                         type='text'
@@ -75,8 +76,19 @@ export default class NewPostForm extends Component {
                         value={this.state.newPost.username}
                         />
                         </div>
+                        <div className="txtb">
+                        <label htmlFor="post-mood">Mood:</label>
+                        <input
+                        type='text'
+                        name='mood'
+                        id='post-mood'
+                        placeholder="How are you feeling?"
+                        onChange={this.handleChange}
+                        value={this.state.newPost.mood}
+                        />
+                        </div>
 
-                        <div>
+                        <div className="txtb">
                         <label htmlFor="post-title">Post Title:</label>
                         <input
                         type='text'
@@ -87,42 +99,7 @@ export default class NewPostForm extends Component {
                         />
                         </div>
 
-
-                        <div>
-                        <label htmlFor="post-text">Post:</label>
-                        <input
-                        type='text'
-                        name='text'
-                        id='post-text'
-                        onChange={this.handleChange}
-                        value={this.state.newPost.text}
-                        cols="300" 
-                        rows="100"
-                        />
-                        </div>
-{/* 
-                        <div>
-                        <label htmlFor="post-location">Location:</label>
-                        <input
-                        type='text'
-                        name='location'
-                        id='post-location'
-                        onChange={this.handleChange}
-                        value={this.state.newPost.location}
-                        />
-                        </div>
-                         */}
-                        <div>
-                        <label htmlFor="post-mood">Mood:</label>
-                        <input
-                        type='text'
-                        name='mood'
-                        id='post-mood'
-                        onChange={this.handleChange}
-                        value={this.state.newPost.mood}
-                        />
-                        </div>
-
+                        <div className="txtb">
                         <label htmlFor="post-text-photo">Post Photo:</label>
                         <input
                         type='text'
@@ -131,7 +108,23 @@ export default class NewPostForm extends Component {
                         onChange={this.handleChange}
                         value={this.state.newPost.text_photo}
                         />
-                        <div>
+                        </div>
+
+                        <div className="txtb">
+                        <label htmlFor="post-text">Post:</label>
+                        <textarea
+                        type='text'
+                        name='text'
+                        id='post-text'
+                        onChange={this.handleChange}
+                        value={this.state.newPost.text}
+                        cols="30" 
+                        rows="5"
+                        placeholder="Whats on your mind?"
+                        />
+                        </div>
+
+                        <div className="txtb">
                         <input
                         type='submit'
                         value='Create Post'
@@ -140,6 +133,7 @@ export default class NewPostForm extends Component {
                     </div>
 
                 </form>
+                </div>
             </div>
         )
     }

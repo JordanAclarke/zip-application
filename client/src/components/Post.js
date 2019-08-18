@@ -72,7 +72,7 @@ export default class Post extends Component {
                 </Navbar>
 
                                 <Card>
-                <Card.Header as="h5">{this.state.post.username}</Card.Header>
+                <Card.Header as="h5">Posted By: {this.state.post.username}</Card.Header>
                 <Card.Body>
                     <Card.Title>{this.state.post.title}</Card.Title>
                     <Card.Text>
