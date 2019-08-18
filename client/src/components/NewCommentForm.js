@@ -50,9 +50,9 @@ export default class NewCommentForm extends Component {
         }
         return (
             <div>
-                <h2 className="comment-header">Add A New Comment</h2>
+                <h2 className="comment-header" className="title">Add A New Comment</h2>
                 <div className="comment-form">
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className="title">
                     <div className="txtb">
                     <label htmlFor='comment-username'>Username:</label>
                     <input 

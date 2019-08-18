@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import { Redirect, Link } from 'react-router-dom'
 import {Navbar, Nav, NavDropdown, Card, Button} from 'react-bootstrap';
+const navBar = {backgroundColor: 'black'};
 export default class Comment extends Component {
     state = {
         comment: {},
@@ -33,21 +34,22 @@ export default class Comment extends Component {
         }
         return (
             <div>
-                <Navbar bg="light" expand="lg">
+                <Navbar style = {navBar} expand="lg">
                 <NavDropdown title="≡" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/">Home</NavDropdown.Item>
                 <NavDropdown.Item href="/categories">Categories</NavDropdown.Item>
                 </NavDropdown>
-                <Navbar.Brand href="#home">ZIP <i class="fa fa-bolt"></i></Navbar.Brand>
+                <Navbar.Brand href="/categories" className="nav"><span className="nav">ZIP</span> <i class="fa fa-bolt"></i></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
                     </Nav>
                 </Navbar.Collapse>
                 </Navbar>
-                <h2>Username: {this.state.comment.username}</h2>
-                <p>{this.state.comment.response}</p>
-                <button onClick={this.handleDeleteComment}>Delete Comment</button>
+
+                <h2 className="title">Username: {this.state.comment.username}</h2>
+                <p className="title">{this.state.comment.response}</p>
+                <Button variant="danger" onClick={this.handleDeleteComment}>Delete Comment</Button>
             </div>
         )
     }

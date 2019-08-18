@@ -4,6 +4,7 @@ import { Link, Redirect } from 'react-router-dom'
 import NewCommentForm from '../components/NewCommentForm'
 import {Navbar, Nav, NavDropdown, Card, Button, ListGroup} from 'react-bootstrap';
 import Image from 'react-graceful-image'
+const navBar = {backgroundColor: 'black'};
 export default class Post extends Component {
     state = {
         post: {},
@@ -39,15 +40,15 @@ export default class Post extends Component {
         let commentList = this.state.comments.map((comment) => {
             return (
                 <Link to={`/comments/${comment.id}/`}>
-                <Card>
-                        <Card.Header>{this.state.post.title}</Card.Header>
+                <Card bg="dark" text="black">
+                        <Card.Header className="title">{this.state.post.title}</Card.Header>
                         <Card.Body>
                             <blockquote className="blockquote mb-0">
-                            <p>
+                            <p className="title">
                                 {' '}
                                 {comment.response}{' '}
                             </p>
-                            <footer className="blockquote-footer">
+                            <footer className="title">
                                 Posted On: {comment.date} By <cite title="Source Title">{comment.username}</cite>
                             </footer>
                             </blockquote>
@@ -58,12 +59,12 @@ export default class Post extends Component {
         })
         return (
             <div>
-                <Navbar bg="light" expand="lg">
-                <NavDropdown title="≡" id="basic-nav-dropdown">
+                <Navbar style = {navBar} expand="lg">
+                <NavDropdown className="title" title="≡" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/">Home</NavDropdown.Item>
                 <NavDropdown.Item href="/categories">Categories</NavDropdown.Item>
                 </NavDropdown>
-                <Navbar.Brand href="#home">ZIP <i class="fa fa-bolt"></i></Navbar.Brand>
+                <Navbar.Brand href="/categories" className="nav"><span className="nav">ZIP</span> <i class="fa fa-bolt"></i></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
@@ -71,22 +72,22 @@ export default class Post extends Component {
                 </Navbar.Collapse>
                 </Navbar>
 
-                                <Card>
-                <Card.Header as="h5">Posted By: {this.state.post.username}</Card.Header>
+                                <Card  bg="dark" text="black" className="title">
+                <Card.Header as="h5">{this.state.post.username} Feeling {this.state.post.mood}</Card.Header>
                 <Card.Body>
                     <Card.Title>{this.state.post.title}</Card.Title>
                     <Card.Text>
                     {this.state.post.text}
                     </Card.Text>
-                    <Image src={this.state.post.text_photo} />
+                    <Image src={this.state.post.text_photo} placeholderColor= "dark" height="300" width="300"/>
                     <div>
-                    <button onClick={this.handleDeletePost}>Delete Post</button>
+                    <Button variant="danger" onClick={this.handleDeletePost}>Delete Post</Button>
                     </div>
                     <Card.Header as="h5">Posted On: {this.state.post.date}</Card.Header>
                 </Card.Body>
                 </Card>
                 
-                <h2>Comments:</h2>
+                <h2 className="title">Comments:</h2>
                 {/* <Link 
                         to={{pathname: '/comments/new', state: {post: this.state.post.id}}}>
                             Add A New Comment

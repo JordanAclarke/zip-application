@@ -5,7 +5,7 @@ import NewPostForm from '../components/NewPostForm'
 import CategoryList from '../components/CategoryList'
 import {Navbar, Nav, NavDropdown, Card, Button} from 'react-bootstrap';
 import Image from 'react-graceful-image'
-const navBar = {backgroundColor: 'white'};
+const navBar = {backgroundColor: 'black'};
 export default class Category extends Component {
     state = {
         category: {},
@@ -69,8 +69,8 @@ export default class Category extends Component {
             return (
                 <Link to={`/posts/${post.id}/`}>
                     <div className="position"></div>
-                        <Card>
-                        <Card.Header>
+                        <Card  bg="dark" text="black" className="title">
+                        <Card.Header as="h5">
                         Posted By: {post.username}
                         </Card.Header>
                         <Card.Body>
@@ -95,7 +95,7 @@ export default class Category extends Component {
                 <NavDropdown.Item href="/">Home</NavDropdown.Item>
                 <NavDropdown.Item href="/categories">Categories</NavDropdown.Item>
                 </NavDropdown>
-                <Navbar.Brand href="/categories">ZIP <i class="fa fa-bolt"></i></Navbar.Brand>
+                <Navbar.Brand href="/categories" className="nav"><span className="nav">ZIP</span> <i class="fa fa-bolt"></i></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
@@ -145,14 +145,14 @@ export default class Category extends Component {
                     </form>
                     :
                     <div>
-                        <h2>{this.state.category.cate_title}</h2>
-                        <p>Description:{this.state.category.description}</p>
+                        <h2 className="title">{this.state.category.cate_title}</h2>
+                        <p className="para">Description:{this.state.category.description}</p>
                         {/* <Image src={this.state.category.photo_url} alt="⚡" placeholderColor="gold" height='300' width='400' /> */}
                         <div>
                         <Button variant="success" onClick = {this.toggleCategoryEditForm}>Edit Category</Button>
                         <Button variant="danger" onClick={this.handleDeleteCategory}>Delete Category</Button>
                         </div>
-                        <h3>{this.state.category.cate_title} Posts:</h3>
+                        <h3 className="title">{this.state.category.cate_title} Posts:</h3>
                         <Link 
                         to={{pathname: `/categories/${this.props.match.params.id}/posts/new`, state: {category: this.state.category.id}}}>
                             Add A New Post
@@ -160,8 +160,6 @@ export default class Category extends Component {
                         <div className='position1'>
                         {postList} 
                         </div>
-
-                        <NewPostForm match={this.props.match} />
                         {/* <Link 
                         to={{pathname: '/posts/new', state: {category: this.state.category.id}}}>
                             Add A New Post

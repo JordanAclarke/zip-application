@@ -5,7 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: lightgray;
+  background-color: black;
+  /* background-image: url("../src/components/images/bolt.gif");
+  background-size: 35rem; */
 }
 
 code {
@@ -45,6 +47,32 @@ code {
   font-size: 5.5em;
   text-transform: uppercase;
   /* color: #ffffff */
+}
+.nav {
+  display: inline;
+  text-shadow: 0 0 20px gold;
+  color: gold;
+  
+}
+.title {
+  text-shadow: 0 0 20px gold;
+  color: gold;
+  font-family: sans-serif;
+}
+.para {
+  text-shadow: 0 0 20px gold;
+  color: gold;
+  font-family: 'Anton', sans-serif;
+}
+.homeButton {
+  text-shadow: 0 0 20px gold;
+  color: gold;
+  background-color: gray;
+}
+.nav:after {
+  color: gold;
+  content: attr(data-text);
+  filter: blur(-10px);
 }
 .neon  {
   color: gold;
@@ -114,3 +142,9 @@ code {
 .txtb input, .txtb {
   width: 50%;
 }
+/* Buttons */
+.create:hover, .create {
+  text-decoration: none;
+  color: white;
+}
+
