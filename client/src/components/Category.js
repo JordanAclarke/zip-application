@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Redirect, Link } from 'react-router-dom'
 import NewPostForm from '../components/NewPostForm'
 import {Navbar, Nav, NavDropdown, Card, Button} from 'react-bootstrap';
+import Image from 'react-graceful-image'
 const navBar = {backgroundColor: 'azure'};
 export default class Category extends Component {
     state = {
@@ -66,28 +67,22 @@ export default class Category extends Component {
         let postList = this.state.posts.map((post) => {
             return (
                 <Link to={`/posts/${post.id}/`}>
-                    {/* <Card className="text-center">
-                    <Card.Header>{post.username}</Card.Header>
-                    <Card.Body>
-                        <Card.Title>{post.title}</Card.Title>
-                        <Card.Text>
+                    <div className="position"></div>
+                        <Card>
+                        <Card.Header>
+                        </Card.Header>
+                        <Card.Body>
+                            <Card.Title>{post.title}</Card.Title>
+                            <Card.Text>
                             {post.text}
-                        </Card.Text>
-                        <Button variant="primary">View Post</Button>
-                    </Card.Body>
-                    <Card.Footer className="text-muted">Posted On:{post.date}</Card.Footer>
-                    </Card> */}
-                    <div className="position">
-                    <Card border="warning" text="black" style={{ width: '18rem' }}>
-                    <Card.Header>{post.username}</Card.Header>
-                    <Card.Body>
-                    <Card.Title>{post.title}</Card.Title>
-                    <Card.Text>
-                        {post.date}
-                    </Card.Text>
-                    </Card.Body>
-                </Card>
-                </div>
+                            </Card.Text>
+                            <Card.Header>
+                            Posted On: {post.date}
+                        </Card.Header>
+                            <Button variant="primary">View Post</Button>
+                        </Card.Body>
+                        </Card>
+                
                 </Link>
             )
         })
@@ -150,23 +145,26 @@ export default class Category extends Component {
                     <div>
                         <h2>{this.state.category.cate_title}</h2>
                         <p>Description:{this.state.category.description}</p>
-                        <img src={this.state.category.photo_url} alt="⚡"  height='500' width='500' />
+                        <Image src={this.state.category.photo_url} alt="⚡" placeholderColor="gold" height='300' width='400' />
                         <div>
-                        <Button variant="warning" onClick = {this.toggleCategoryEditForm}>Edit Category</Button>
+                        <Button variant="success" onClick = {this.toggleCategoryEditForm}>Edit Category</Button>
                         <Button variant="danger" onClick={this.handleDeleteCategory}>Delete Category</Button>
                         </div>
                         <h3>{this.state.category.cate_title} Posts:</h3>
-                        <div className='position1'>{postList} </div>
+                        <Link 
+                        to={{pathname: `/categories/${this.props.match.params.id}/posts/new`, state: {category: this.state.category.id}}}>
+                            Add A New Post
+                        </Link>
+                        <div className='position1'>
+                        {postList} 
+                        </div>
                         
                         {/* <NewPostForm match={this.props.match} /> */}
                         {/* <Link 
                         to={{pathname: '/posts/new', state: {category: this.state.category.id}}}>
                             Add A New Post
                         </Link> */}
-                        <Link 
-                        to={{pathname: `/categories/${this.props.match.params.id}/posts/new`, state: {category: this.state.category.id}}}>
-                            Add A New Post
-                        </Link>
+            
                         
                     </div>
                 }

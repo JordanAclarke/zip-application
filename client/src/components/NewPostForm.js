@@ -77,29 +77,6 @@ export default class NewPostForm extends Component {
                         </div>
 
                         <div>
-                        <label htmlFor="post-user-photo">Profile Photo:</label>
-                        <input
-                        type='text'
-                        name='user_photo'
-                        id='post-user-photo'
-                        onChange={this.handleChange}
-                        value={this.state.newPost.user_photo}
-                        />
-                        </div>
-
-                        {/* <div>
-                        <label htmlFor="post-date">Date:</label>
-                        <input
-                        type='text'
-                        name='date'
-                        id='post-date'
-                        onChange={this.handleChange}
-                        value={this.state.newPost.date}
-                        />
-                        </div> */}
-
-
-                        <div>
                         <label htmlFor="post-title">Post Title:</label>
                         <input
                         type='text'

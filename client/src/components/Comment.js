@@ -45,8 +45,7 @@ export default class Comment extends Component {
                     </Nav>
                 </Navbar.Collapse>
                 </Navbar>
-                <h1>Hello World</h1>
-                <h2>{this.state.comment.username}</h2>
+                <h2>Username: {this.state.comment.username}</h2>
                 <p>{this.state.comment.response}</p>
                 <button onClick={this.handleDeleteComment}>Delete Comment</button>
             </div>

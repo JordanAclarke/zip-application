@@ -81,7 +81,8 @@ code {
 }
 .position1 {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; 
+
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -95,7 +96,7 @@ code {
   margin-left: 35%;
 }
 
- .comment-header {
+.comment-header {
   text-align: center;
   font-weight: 200;
 }

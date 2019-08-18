@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link, Redirect } from 'react-router-dom'
 import NewCommentForm from '../components/NewCommentForm'
 import {Navbar, Nav, NavDropdown, Card, Button, ListGroup} from 'react-bootstrap';
+import Image from 'react-graceful-image'
 export default class Post extends Component {
     state = {
         post: {},
@@ -72,13 +73,12 @@ export default class Post extends Component {
 
                                 <Card>
                 <Card.Header as="h5">{this.state.post.username}</Card.Header>
-                <Card.Img variant="top" src={this.state.post.user_photo} />
                 <Card.Body>
                     <Card.Title>{this.state.post.title}</Card.Title>
                     <Card.Text>
                     {this.state.post.text}
                     </Card.Text>
-                    <Card.Img variant="top" src={this.state.post.text_photo} />
+                    <Image src={this.state.post.text_photo} />
                     <div>
                     <button onClick={this.handleDeletePost}>Delete Post</button>
                     </div>

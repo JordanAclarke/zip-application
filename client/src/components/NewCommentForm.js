@@ -64,27 +64,6 @@ export default class NewCommentForm extends Component {
                     />
                     </div>
 
-                    <div className="txtb">
-                    <label htmlFor='comment-user-photo'>User Photo:</label>
-                    <input 
-                    type='text'
-                    name='user_photo'
-                    id='comment-user-photo'
-                    onChange={this.handleChange}
-                    value={this.state.newComment.user_photo}
-                    />
-                    </div>
-
-                    <div className="txtb">
-                    <label htmlFor='comment-date'>Date:</label>
-                    <input 
-                    type='text'
-                    name='date'
-                    id='comment-date'
-                    onChange={this.handleChange}
-                    value={this.state.newComment.date}
-                    />
-                    </div>
 
                     <div className="txtb">
                     <label htmlFor='comment-response'>Response:</label>
