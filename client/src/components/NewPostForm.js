@@ -13,8 +13,10 @@ export default class NewPostForm extends Component {
             location: '',
             mood: '',
             text_photo: '',
-            category: this.props.match.params.id
+            category: this.props.match.params.id,
         },
+        loading: true,
+        person: null,
         redirectToHome: false
     }
     componentDidMount = () => {
@@ -22,6 +24,7 @@ export default class NewPostForm extends Component {
             .then((res) => {
                 this.setState({categories: res.data})
             })
+            this.createName()
     }
 
     handleChange = (evt) => {
@@ -43,11 +46,25 @@ export default class NewPostForm extends Component {
                 })
             })
     }
+
+    async createName() {
+        const url = "https://api.randomuser.me/";
+        const response = await fetch(url);
+        const data = await response.json()
+        let nickName = {...this.state.newPost}
+        nickName.username=data.results[0].login.username
+        this.setState({ newPost: nickName, loading: false })
+        console.log(data.results[0]);
+    }
     
     render() {
         if(this.state.redirectToHome) {
             return <Redirect to="/" />
         }
+        if(this.state.loading) {
+            return <div>Loading.....</div>
+        }
+       
         return (
             <div>
                 {/* <Navbar bg="light" expand="lg">
@@ -64,7 +81,7 @@ export default class NewPostForm extends Component {
                 </Navbar> */}
                 <h2 className="comment-header">Add A New Post</h2>
                 <div className="comment-form">
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className="title">
                     <div>
                         <div className="txtb">
                         <label htmlFor="post-username">UserName:</label>
@@ -74,6 +91,7 @@ export default class NewPostForm extends Component {
                         id='post-username'
                         onChange={this.handleChange}
                         value={this.state.newPost.username}
+                         
                         />
                         </div>
                         <div className="txtb">

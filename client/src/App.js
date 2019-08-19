@@ -9,7 +9,8 @@ import Comment from './components/Comment.js'
 import NewPostForm from './components/NewPostForm.js';
 import NewCommentForm from './components/NewCommentForm';
 import PreviewPage from './components/PreviewPage.js'
-
+import Api from './components/Api';
+import Request from './components/Request'
 function App() {
   return (
     <div className="App">
@@ -23,6 +24,8 @@ function App() {
           <Route exact path = "/posts/:id" component={Post} />
           <Route exact path="/comments/new" component={NewCommentForm} />
           <Route path = "/comments/:id" component={Comment} /> 
+          <Route exact path="/test" component={Api} />
+          <Route exact path="/requests" component={Request} />
           
         </Switch>
       </Router>
