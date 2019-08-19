@@ -59,15 +59,15 @@ export default class NewPostForm extends Component {
     
     render() {
         if(this.state.redirectToHome) {
-            return <Redirect to="/" />
+            return <Redirect to={`/categories/${this.state.newPost.category}/`} />
         }
         if(this.state.loading) {
             return <div>Loading.....</div>
         }
-       
+
         return (
             <div>
-                {/* <Navbar bg="light" expand="lg">
+                <Navbar bg="light" expand="lg">
                 <NavDropdown title="≡" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/">Home</NavDropdown.Item>
                 <NavDropdown.Item href="/categories">Categories</NavDropdown.Item>
@@ -78,7 +78,7 @@ export default class NewPostForm extends Component {
                     <Nav className="mr-auto">
                     </Nav>
                 </Navbar.Collapse>
-                </Navbar> */}
+                </Navbar>
                 <h2 className="comment-header">Add A New Post</h2>
                 <div className="comment-form">
                 <form onSubmit={this.handleSubmit} className="title">
@@ -91,7 +91,7 @@ export default class NewPostForm extends Component {
                         id='post-username'
                         onChange={this.handleChange}
                         value={this.state.newPost.username}
-                         
+                    
                         />
                         </div>
                         <div className="txtb">

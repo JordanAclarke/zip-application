@@ -24,7 +24,6 @@ function App() {
           <Route exact path = "/posts/:id" component={Post} />
           <Route exact path="/comments/new" component={NewCommentForm} />
           <Route path = "/comments/:id" component={Comment} /> 
-          <Route exact path="/test" component={Api} />
           <Route exact path="/requests" component={Request} />
           
         </Switch>

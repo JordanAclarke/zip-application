@@ -44,9 +44,21 @@ export default class NewCommentForm extends Component {
                 })
             })
     }
+    async componentDidMount() {
+        const url = "https://api.randomuser.me/";
+        const response = await fetch(url);
+        const data = await response.json()
+        let nickName = {...this.state.newComment}
+        nickName.username=data.results[0].login.username
+        this.setState({ newComment: nickName, loading: false })
+        console.log(data.results[0]);
+    }
     render() {
         if(this.state.redirectToHome) {
-            return <Redirect to="/" />
+            return <Redirect to={`/posts/${this.state.newComment.post}/`} />
+        }
+        if(this.state.loading) {
+            return <div>Loading.....</div>
         }
         return (
             <div>

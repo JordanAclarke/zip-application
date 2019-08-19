@@ -35,7 +35,7 @@ export default class Post extends Component {
 
     render() {
         if(this.state.redirectToHome) {
-            return <Redirect to="/" />
+            return <Redirect to={`/categories/${this.state.post.category}/`}/>
         }
         let commentList = this.state.comments.map((comment) => {
             return (
