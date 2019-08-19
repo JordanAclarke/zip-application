@@ -6,10 +6,10 @@
 [Zip-Application](https://zipchatapplication.herokuapp.com/)
 
 ## Technologies Used
--HTML,CSS,JavaScript,Django,SQL,Postgres,Python & React
--Google Fonts
--Wireframing & User Stories- Trello & Pages
--Visual Studio Code
+- HTML,CSS,JavaScript,Django,SQL,Postgres,Python & React
+- Google Fonts
+- Wireframing & User Stories- Trello & Pages
+- Visual Studio Code
 
 ## ERD
 
