@@ -7,7 +7,7 @@ export default class PreviewPage extends Component {
         <Link to={`/categories`} className='under'>       
         <div className="banner">
         <video playsinline='true' autoplay='true' muted='true' loop='true'>
-            <source src='../src/components/images/Lightning.mp4' type='video/mp4' />
+            <source src='Lightning.mp4' type='video/mp4' />
         </video>
         <div className="content">
         <h1 className='neon' >Zip  <i class="fa fa-bolt"></i></h1>
