@@ -1,4 +1,5 @@
 # Zip !
+Unleash Your Thoughts! Zip is a social media app for thinkers across the globe. Users can create categories/topics to discuss. Users can make posts and comment on current posts based on the category selected.
 
 ## Project Links
 [Trello Planning Board](https://trello.com/b/2SsgcqmN/project-4-board)
