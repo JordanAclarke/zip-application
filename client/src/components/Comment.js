@@ -30,7 +30,7 @@ export default class Comment extends Component {
         }
     render() {
         if(this.state.redirectToHome) {
-            return <Redirect to="/" />
+            return <Redirect to={`/posts/${this.state.comment.post}/`} />
         }
         return (
             <div>
