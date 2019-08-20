@@ -107,7 +107,7 @@ export default class Category extends Component {
                 {
                     this.state.isEditCategoryFormDisplay
                     ?
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit} className="title">
                         <div>
                             <label htmlFor="category-title">Title:</label>
                             <input
