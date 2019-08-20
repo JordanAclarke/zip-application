@@ -90,7 +90,7 @@ export default class Category extends Component {
         })
         return (
             <div>
-                <Navbar style = {navBar} expand="lg">
+                <Navbar className="nav-test" style = {navBar} expand="lg">
                 <NavDropdown title="≡" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/">Home</NavDropdown.Item>
                 <NavDropdown.Item href="/categories">Categories</NavDropdown.Item>
@@ -108,7 +108,7 @@ export default class Category extends Component {
                     this.state.isEditCategoryFormDisplay
                     ?
                     <form onSubmit={this.handleSubmit} className="title">
-                        <div>
+                        <div className="txtb">
                             <label htmlFor="category-title">Title:</label>
                             <input
                             type="text"
@@ -118,7 +118,7 @@ export default class Category extends Component {
                             value={this.state.category.cate_title}
                             />
                         </div>
-                        <div>
+                        <div className="txtb">
                             <label htmlFor="category-description">Description:</label>
                             <input
                             type="text"
@@ -128,7 +128,7 @@ export default class Category extends Component {
                             value={this.state.category.description}
                             />
                         </div>
-                        <div>
+                        <div className="txtb">
                             <label htmlFor="category-photo">Photo:</label>
                             <input
                             type="text"
@@ -137,10 +137,12 @@ export default class Category extends Component {
                             onChange={this.handleChange}
                             value={this.state.category.photo_url}
                             />
+                            <div>
                             <input
                             type='submit'
                             value='Update Category'
                             />
+                            </div>
                         </div>
                     </form>
                     :

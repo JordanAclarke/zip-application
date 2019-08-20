@@ -34,7 +34,7 @@ export default class Comment extends Component {
         }
         return (
             <div>
-                <Navbar style = {navBar} expand="lg">
+                <Navbar className="nav-test" style = {navBar} expand="lg">
                 <NavDropdown title="≡" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/">Home</NavDropdown.Item>
                 <NavDropdown.Item href="/categories">Categories</NavDropdown.Item>

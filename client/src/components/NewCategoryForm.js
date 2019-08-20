@@ -38,7 +38,7 @@ export default class NewCategoryForm extends Component {
         }
         return (
             <div>
-                <Navbar style = {navBar} expand="lg">
+                <Navbar className="nav-test" style = {navBar} expand="lg">
                 <NavDropdown title="≡" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/">Home</NavDropdown.Item>
                 <NavDropdown.Item href="/categories">Categories</NavDropdown.Item>
@@ -51,9 +51,11 @@ export default class NewCategoryForm extends Component {
                 </Navbar.Collapse>
                 </Navbar>
 
-                <h2 className="title">Add New Category</h2>
+                <h2 className="comment-header">Add New Category</h2>
+                <div className="comment-form">
                 <form onSubmit={this.handleSubmit} className="title">
-                        <div>
+                    <div>
+                        <div  className="txtb">
                             <label htmlFor="category-title">Title:</label>
                             <input
                             type="text"
@@ -63,7 +65,7 @@ export default class NewCategoryForm extends Component {
                             value={this.state.newCategory.cate_title}
                             />
                         </div>
-                        <div>
+                        <div className="txtb">
                             <label htmlFor="category-description">Description:</label>
                             <input
                             type="text"
@@ -73,7 +75,7 @@ export default class NewCategoryForm extends Component {
                             value={this.state.newCategory.description}
                             />
                         </div>
-                        <div>
+                        <div className="txtb">
                             <label htmlFor="category-photo">Photo:</label>
                             <input
                             type="text"
@@ -88,8 +90,10 @@ export default class NewCategoryForm extends Component {
                             value='create category'
                             />
                             </div>
+                            </div>
                         </div>
                     </form>
+                    </div>
             </div>
         )
     }

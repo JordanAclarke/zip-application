@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import {Navbar, Nav, NavDropdown, Card, Button} from 'react-bootstrap';
+const navBar = {backgroundColor: 'black'};
 export default class NewPostForm extends Component {
     state = {
         newPost: {
@@ -62,17 +63,17 @@ export default class NewPostForm extends Component {
             return <Redirect to={`/categories/${this.state.newPost.category}/`} />
         }
         if(this.state.loading) {
-            return <div>Loading.....</div>
+            return <div className="title">Loading.....</div>
         }
 
         return (
             <div>
-                <Navbar bg="light" expand="lg">
-                <NavDropdown title="≡" id="basic-nav-dropdown">
+                <Navbar className="nav-test" style = {navBar} expand="lg">
+                <NavDropdown className="title" title="≡" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/">Home</NavDropdown.Item>
                 <NavDropdown.Item href="/categories">Categories</NavDropdown.Item>
                 </NavDropdown>
-                <Navbar.Brand href="#home">ZIP <i class="fa fa-bolt"></i></Navbar.Brand>
+                <Navbar.Brand href="/categories" className="nav"><span className="nav">ZIP</span> <i class="fa fa-bolt"></i></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
@@ -142,10 +143,10 @@ export default class NewPostForm extends Component {
                         />
                         </div>
 
-                        <div className="txtb">
-                        <input
-                        type='submit'
-                        value='Create Post'
+                        <div className="txtb" id="submitButton">
+                        <input 
+                        type="submit"
+                        value="Submit Post"
                         />
                         </div>
                     </div>

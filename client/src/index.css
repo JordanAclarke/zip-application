@@ -137,6 +137,22 @@ code {
   margin: 8px 0;
   padding: 12px 18px;
   border-radius: 8px;
+  background-image: url('../src/components/images/shock.gif');
+  background-size: cover;
+}
+.txtb1 {
+  border: 1px solid gray;
+  margin: 0 auto;
+  padding: 12px 18px;
+  border-radius: 2px;
+  background-image: url('../src/components/images/shock.gif');
+  background-size: cover;
+  width: 50%;
+}
+.txtb1 label {
+  display: block;
+  text-align: left;
+  text-transform: uppercase;
 }
 .txtb label {
   display: block;
@@ -150,5 +166,16 @@ code {
 .create:hover, .create {
   text-decoration: none;
   color: white;
+}
+
+.nav-test {
+  background-image: url('../src/components/images/shock.gif');
+  background-size: cover;
+}
+
+#submitButton {
+  display: block;
+  padding: 10px;
+  justify-content: center;
 }
 
