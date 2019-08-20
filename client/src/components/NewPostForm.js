@@ -85,15 +85,14 @@ export default class NewPostForm extends Component {
                 <form onSubmit={this.handleSubmit} className="title">
                     <div>
                         <div className="txtb">
-                        <label htmlFor="post-username">UserName:</label>
-                        <input
-                        type='text'
-                        name='username'
-                        id='post-username'
-                        onChange={this.handleChange}
-                        value={this.state.newPost.username}
-                    
-                        />
+                            <label htmlFor="post-username">UserName:</label>
+                            <input
+                            type='text'
+                            name='username'
+                            id='post-username'
+                            onChange={this.handleChange}
+                            value={this.state.newPost.username}
+                            />
                         </div>
                         <div className="txtb">
                         <label htmlFor="post-mood">Mood:</label>

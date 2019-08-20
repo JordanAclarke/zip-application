@@ -49,7 +49,7 @@ export default class Comment extends Component {
 
                 <h2 className="title">Username: {this.state.comment.username}</h2>
                 <p className="title">{this.state.comment.response}</p>
-                <Button variant="danger" onClick={this.handleDeleteComment}>Delete Comment</Button>
+                <Button variant="danger" onClick={this.handleDeleteComment}>Delete Comment <i class="fa fa-scissors"></i></Button>
             </div>
         )
     }

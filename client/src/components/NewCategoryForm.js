@@ -55,7 +55,7 @@ export default class NewCategoryForm extends Component {
                 <div className="comment-form">
                 <form onSubmit={this.handleSubmit} className="title">
                     <div>
-                        <div  className="txtb">
+                        <div className="txtb">
                             <label htmlFor="category-title">Title:</label>
                             <input
                             type="text"
@@ -84,10 +84,10 @@ export default class NewCategoryForm extends Component {
                             onChange={this.handleChange}
                             value={this.state.newCategory.photo_url}
                             />
-                            <div>
+                            <div className="sub">
                             <input 
                             type='submit'
-                            value='create category'
+                            value='Create Category'
                             />
                             </div>
                             </div>

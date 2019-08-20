@@ -13,6 +13,7 @@ body {
   
 }
 
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -57,10 +58,10 @@ code {
   color: gold;
   
 }
-.title {
+.title, footer {
   text-shadow: 0 0 20px gold;
   color: gold;
-  font-family: sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 .para {
   text-shadow: 0 0 20px gold;
@@ -177,5 +178,24 @@ code {
   display: block;
   padding: 10px;
   justify-content: center;
+}
+.sub {
+  padding: 10px;
+}
+
+input[type=submit] {
+  padding:5px 15px; 
+  background:gold; 
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; 
+}
+
+.inline:hover {
+  text-decoration: none;
+}
+.post {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 

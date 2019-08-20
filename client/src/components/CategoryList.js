@@ -36,7 +36,7 @@ export default class CategoryList extends Component {
                             <Card.Text>
                             {category.description}
                             </Card.Text>
-                            <Button className="title" variant="primary">View {category.cate_title} Posts</Button>
+                            <Button className="title" variant="primary" style={{backgroundColor: "black", border:'transparent'}}>View {category.cate_title} Posts</Button>
                         </Card.Body>
                         </Card>
                         </div>
@@ -59,7 +59,7 @@ export default class CategoryList extends Component {
                 </Navbar>
 
                 <h1 className="title">Topics <i class="fa fa-hand-o-up"></i></h1>
-                <Button variant="success" className="create"><Link className="create" to={'/categories/new/'}>Add A Category</Link></Button>
+                <Button variant="success" className="create"><Link className="create" to={'/categories/new/'}>Add A Category <i class="fa fa-check-square-o"></i></Link></Button>
                 <div className='position1'>
                 {categoryList}
                 </div>

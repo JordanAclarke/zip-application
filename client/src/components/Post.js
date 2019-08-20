@@ -39,7 +39,7 @@ export default class Post extends Component {
         }
         let commentList = this.state.comments.map((comment) => {
             return (
-                <Link to={`/comments/${comment.id}/`}>
+                <Link to={`/comments/${comment.id}/`} className="inline">
                 <Card bg="dark" text="black">
                         <Card.Header className="title">{this.state.post.title}</Card.Header>
                         <Card.Body>
@@ -76,18 +76,18 @@ export default class Post extends Component {
                 <Card.Header as="h5">{this.state.post.username} Feeling {this.state.post.mood}</Card.Header>
                 <Card.Body>
                     <Card.Title>{this.state.post.title}</Card.Title>
-                    <Card.Text>
+                    <Card.Text className="post">
                     {this.state.post.text}
                     </Card.Text>
                     <Image src={this.state.post.text_photo} placeholderColor= "dark" height="300" width="300"/>
                     <div>
-                    <Button variant="danger" onClick={this.handleDeletePost}>Delete Post</Button>
+                    <Button variant="danger" onClick={this.handleDeletePost}>Delete Post <i class="fa fa-scissors"></i></Button>
                     </div>
                     <Card.Header as="h5">Posted On: {this.state.post.date}</Card.Header>
                 </Card.Body>
                 </Card>
-                
-                <h2 className="title">Comments:</h2>
+                &nbsp;
+                {/* <h2 className="title">Comments:</h2> */}
                 {/* <Link 
                         to={{pathname: '/comments/new', state: {post: this.state.post.id}}}>
                             Add A New Comment

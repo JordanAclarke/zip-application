@@ -67,11 +67,11 @@ export default class Category extends Component {
         }
         let postList = this.state.posts.map((post) => {
             return (
-                <Link to={`/posts/${post.id}/`}>
+                <Link to={`/posts/${post.id}/`} className="inline">
                     <div className="position"></div>
-                        <Card  bg="dark" text="black" className="title">
+                        <Card  bg="dark" text="black" className="title" >
                         <Card.Header as="h5">
-                        Posted By: {post.username}
+                        Username: {post.username}
                         </Card.Header>
                         <Card.Body>
                             <Card.Title>{post.title}</Card.Title>
@@ -81,7 +81,7 @@ export default class Category extends Component {
                             <Card.Header>
                             Posted On: {post.date}
                         </Card.Header>
-                            <Button variant="primary">View Post</Button>
+                            <Button variant="primary" style={{backgroundColor: "transparent", border:'transparent', color: "gold"}}>View Post</Button>
                         </Card.Body>
                         </Card>
                 
@@ -151,14 +151,17 @@ export default class Category extends Component {
                         <p className="para">Description:{this.state.category.description}</p>
                         {/* <Image src={this.state.category.photo_url} alt="⚡" placeholderColor="gold" height='300' width='400' /> */}
                         <div>
-                        <Button variant="success" onClick = {this.toggleCategoryEditForm}>Edit Category</Button>
-                        <Button variant="danger" onClick={this.handleDeleteCategory}>Delete Category</Button>
+                        <Button variant="success" onClick = {this.toggleCategoryEditForm}>Edit Category <i class="fa fa-key"></i></Button>
+                        <Button variant="danger" onClick={this.handleDeleteCategory}>Delete Category <i class="fa fa-scissors"></i></Button>
                         </div>
                         <h3 className="title">{this.state.category.cate_title} Posts:</h3>
+                        <Button style={{backgroundColor: "black", border:'transparent'}}>
                         <Link 
+                        className="title"
                         to={{pathname: `/categories/${this.props.match.params.id}/posts/new`, state: {category: this.state.category.id}}}>
-                            Add A New Post
-                        </Link>
+                            Create A Post <i class="fa fa-plus-square-o"></i>
+                        </Link >
+                        </Button>
                         <div className='position1'>
                         {postList} 
                         </div>
