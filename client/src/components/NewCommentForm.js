@@ -15,15 +15,6 @@ export default class NewCommentForm extends Component {
         redirectToHome: false
     }
 
-    // componentDidMount = () => {
-    //     const route = {...this.state.newComment}
-    //     route.postId = this.props.match.params.postId
-    //     this.setState({newComment: route})
-    //     // axios.get(`/api/v1/posts/${this.props.match.params.id}/`)
-    //     //     .then((res) => {
-    //     //         this.setState({posts: this.state.id})
-    //     //     })
-    // }
 
     handleChange = (evt) => {
         let copiedComment = {...this.state.newComment}

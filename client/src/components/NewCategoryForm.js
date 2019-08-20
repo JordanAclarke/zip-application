@@ -90,7 +90,7 @@ export default class NewCategoryForm extends Component {
                             value='Create Category'
                             />
                             </div>
-                            </div>
+                            </div> 
                         </div>
                     </form>
                     </div>

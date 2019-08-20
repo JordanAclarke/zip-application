@@ -108,7 +108,7 @@ export default class Category extends Component {
                     this.state.isEditCategoryFormDisplay
                     ?
                     <form onSubmit={this.handleSubmit} className="title">
-                        <div className="txtb">
+                        <div className="txtb1">
                             <label htmlFor="category-title">Title:</label>
                             <input
                             type="text"
@@ -118,7 +118,7 @@ export default class Category extends Component {
                             value={this.state.category.cate_title}
                             />
                         </div>
-                        <div className="txtb">
+                        <div className="txtb1">
                             <label htmlFor="category-description">Description:</label>
                             <input
                             type="text"
@@ -128,7 +128,7 @@ export default class Category extends Component {
                             value={this.state.category.description}
                             />
                         </div>
-                        <div className="txtb">
+                        <div className="txtb1">
                             <label htmlFor="category-photo">Photo:</label>
                             <input
                             type="text"
@@ -137,8 +137,8 @@ export default class Category extends Component {
                             onChange={this.handleChange}
                             value={this.state.category.photo_url}
                             />
-                            <div>
-                            <input
+                            <div className="sub">
+                            <input 
                             type='submit'
                             value='Update Category'
                             />
